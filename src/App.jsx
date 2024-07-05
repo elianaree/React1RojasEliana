@@ -1,10 +1,18 @@
 
-import './App.css';
+import "./App.css";
+import NavBar from "./components/NavBar/NavBar.jsx";
+import ItemListContainer from "./components/ItemListContainer/ItemListContainer.jsx";
+
 
 function App() {
 
 
-  return  <h1>Vite + React</h1>;
+  return (
+    <div className= "App">
+      <NavBar/>
+      <ItemListContainer greeting={"Bienvenidos a Hava Spa"}/>
+    </div>
+  )
     
 }
 
