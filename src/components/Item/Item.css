@@ -1,0 +1,31 @@
+.CardItem{
+    padding-bottom: 5%;
+    margin-top: auto;
+}
+
+
+.ItemImg{
+margin-left: 25%;
+
+}
+
+.ItemHeader{
+text-align: center;
+
+}
+
+.descript{
+    text-align: center;
+    font-size: 20px;
+}
+
+.info{
+    text-align: center;
+
+}
+
+.btn{
+    margin-left: 47%;
+    color:cadetblue;
+
+}

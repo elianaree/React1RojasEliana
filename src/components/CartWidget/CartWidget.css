@@ -1,18 +1,22 @@
 .cart{
     width: 4%;
     margin-bottom: 25%;
-    float:right;
-    
+    margin-left: 90%;
 }
 
-span{
-   
-   float:right;
-   margin-left: 60%;
-   margin-top: 0%;
-   
-   
-   
-   
+.badge{
+    position: absolute;
+    bottom: 18%;
+    left: 93%;
+    background: red;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    padding: 2px;
+
 
 }

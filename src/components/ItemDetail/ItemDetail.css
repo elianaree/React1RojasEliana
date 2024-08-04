@@ -1,0 +1,46 @@
+.container{
+    width: 98%;
+    margin: auto;
+}
+    @media screen and (min-width: 768px){
+    .container{
+    width: 70%;
+    }
+
+
+    .descripcion{
+   font-size: 15px;
+   text-align: center;
+    }
+   
+    .detail-imagen{
+    width: 100%;
+    margin-left: 25%;
+    
+    
+    }
+   .precio{
+    text-align: center;
+
+   }
+
+   .stock{
+    text-align: center;
+   }
+    .content{
+    width: 50%;
+    text-align: center;
+
+    }
+   
+    @media screen and (min-width: 768px){
+    .detail-imagen{
+    width: 50%;
+    }
+   
+    .content{
+    padding-left: 3 rem;
+    width: 50%;
+    }
+}
+}

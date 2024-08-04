@@ -1,23 +1,31 @@
 
 import CartWidget from "../CartWidget/CartWidget";
 import "./NavBar.css";
+import { NavLink } from "react-router-dom";
+import logo from "/src/assets/logo.svg"
 
 const NavBar = () => {
 
 return (
-    <>
+<>
+<nav>
 <div>
-<h3>Hava Spa</h3>
+<img className="logo-nav" src={logo} alt="logo de la marca"/>
+
 </div>
-<nav className="navItems">
-    <button>Inicio</button>
-    <button>Servicios</button>
-    <button>Contacto</button>
-    </nav>
 
+<div className="navItems">
+
+<NavLink className='nav-link' to='/categoria/spa'>Hidroterapia</NavLink> 
+<NavLink className='nav-link' to='/categoria/masajes'>Masajes</NavLink>
+<NavLink className='nav-link' to='/categoria/cuidado'>Belleza</NavLink>
+
+<NavLink className='nav-link' to='CartWidget/carrito'></NavLink> 
+</div>
 <CartWidget/>
-</>
+</nav>
 
+</>
 
 )
 }

@@ -1,12 +1,13 @@
 
-import bag from "./assets/bag.svg"
+import bag from "/src/assets/bag.svg"
+
 import "./CartWidget.css"
 
 const CartWidget = () =>{
     return (
         <div> 
             <img src={bag}  className="cart" alt= "shopping-bag"/>
-            <span>0</span>
+            <span className="badge">0</span>
         </div>
     )
 }

@@ -1,12 +1,14 @@
-.navItems button {
+.nav-link{
     display: inline-block;
     padding: 0 12rem;
     color:black;
-    font-size: 2rem;
+    font-size: 1.5rem;
+    margin-top: 7%;
+
 }
 
-h3{
-font-size: 3rem;
-color: darkgreen;
-margin-left: 10px;
+.logo-nav{
+  width: 16%;
+  
+
 }
