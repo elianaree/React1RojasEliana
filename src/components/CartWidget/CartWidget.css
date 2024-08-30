@@ -1,12 +1,12 @@
 .cart{
     width: 4%;
-    margin-bottom: 25%;
+    margin-bottom: 26%;
     margin-left: 90%;
 }
 
 .badge{
     position: absolute;
-    bottom: 18%;
+    bottom: 19%;
     left: 93%;
     background: red;
     width: 15px;

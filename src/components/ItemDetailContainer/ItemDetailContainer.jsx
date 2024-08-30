@@ -1,34 +1,42 @@
 
-
 import './ItemDetailContainer.css'
-import ItemDetail from '../ItemDetail/ItemDetail'
-import React,{useState, useEffect} from 'react'
+import ItemDetail from '../ItemDetail/ItemDetail';
+import {useEffect, useState} from 'react'
+import { useParams } from "react-router-dom";
+import { db } from "../../firebase/dbConnection";
+import { collection, getDoc, doc } from "firebase/firestore";
 
-const products = {
-id: 1,
-nombre: 'Piscina de Hidroterapia',
-imagen: 'https://i.ibb.co/mqXFsr3/foto1.jpg',
-precio: 10.555,
-descripcion: 'Brinda beneficios terapéuticos mediante chorros de masajes con agua caliente o fría.',
-stock: 10,
-};
 
-export const ItemDetailContainer = () => {
-const [data, setData] = useState({});
+const ItemDetailContainer = () => {
+const [products, setProducts] = useState({});
+const [loading, setLoading] = useState(true);
+const { id } = useParams()
 
 useEffect(() => {
-const getData = new Promise(resolve =>{
-setTimeout(() => {
-resolve(products);
-}, 1000);
-});
-getData.then(res=> setData(res));
+    setLoading(true);
+    const productsCollection = collection(db, "products");
+    const productsRef = doc(productsCollection, id);
 
-}, [])
+    getDoc(productsRef)
+      .then((doc) => {
+        
+          setProducts({ id: doc.id, ...doc.data() });
+          setLoading(false);
+      })
+      .catch((error) => {
+        setLoading(false);
+        console.log("Se generó el error documento: ", error);
+        
+      });
+  }, [id]);
+  return (
+    <>
+    {loading ? (<h2>loading...</h2>) : (
+    <ItemDetail product={products}/>
+    )}
+    </>
+    )
+    }
+   
 
-return (
-<ItemDetail data={data}/>
-);
-}
-
-export default ItemDetailContainer
+export default ItemDetailContainer;

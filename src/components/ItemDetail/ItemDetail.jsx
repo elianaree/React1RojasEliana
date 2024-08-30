@@ -1,31 +1,36 @@
 import './ItemDetail.css'
 import React from 'react'
-
+import ItemCount from "../ItemCount/ItemCount.jsx"
+import { useCartContext } from "../../Context/CartContext.jsx";
 
 export const ItemDetail = ({ data }) => {
+	const [goToCart, setGoToCart] = useState(false);
+	const { addProduct } = useCartContext();
+
+	const onAdd = (quantity) => {
+		setGoToCart(true);
+		addProduct(data, quantity);
+	};
+    
 
     return (
-    <div className='container'>
-        <div className='titulo'>
-                <h1>{data.nombre}</h1>
-            </div>
-           
-        <div className='detail'>
-            <img className='detail-imagen' src={data.imagen} alt=''/>
-            
-        </div>
-        <div className='precio'>
-                <h2>{data.precio}</h2>
-            </div>
-            <div className='descripcion'>
-                <h3>{data.descripcion}</h3>
-            </div>
-            <div className='stock'>
-                <h4>{data.stock}</h4>
-            </div>
-    </div>
     
-    )
-}
+            <div className="itemContainer">
+                <h1>{nombre}</h1>
+                <img src={imagen} alt=""/> 
+                <p>${precio}</p>
+                <p>{descripcion}</p>
+                {goToCart ? (
+						<Link to="/cart"> Terminar al carrito</Link>
+                    ) : (
+            
+                        <ItemCount initial={0} stock={10} onAdd={onAdd} />
+                    )}
+            </div>
+             
+             
+        
+    );
+};
 
-export default ItemDetail
+export default ItemDetail;

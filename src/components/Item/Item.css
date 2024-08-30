@@ -1,31 +1,32 @@
-.CardItem{
+.card-items{
     padding-bottom: 5%;
     margin-top: auto;
+    
+    
 }
+.item-title{
 
+font-size:10px;
+color: black;
+
+}
 
 .ItemImg{
-margin-left: 25%;
+width: 35rem;
+margin-left: 32%;
+
 
 }
 
-.ItemHeader{
-text-align: center;
-
-}
-
-.descript{
+.Info{
     text-align: center;
     font-size: 20px;
-}
-
-.info{
-    text-align: center;
-
 }
 
 .btn{
     margin-left: 47%;
     color:cadetblue;
+    font-size: 20px;
 
 }
+
